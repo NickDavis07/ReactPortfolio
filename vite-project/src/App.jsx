@@ -8,7 +8,7 @@ function App() {
     switch (currentSection) {
       case 'about-me':
         return (
-          <section id="about-me" className="container mt-5">
+          <section id="about-me" className="container-fluid mt-5">
             <h2>About Me</h2>
             <img src="path/to/photo.jpg" alt="Developer's Photo" className="img-fluid rounded-circle mb-3" />
             <p>
@@ -24,14 +24,14 @@ function App() {
         );
       case 'portfolio':
         return (
-          <section id="portfolio" className="container mt-5">
+          <section id="portfolio" className="container-fluid mt-5">
             <h2>Portfolio</h2>
             {/* Portfolio items will be added here */}
           </section>
         );
       case 'contact':
         return (
-          <section id="contact" className="container mt-5">
+          <section id="contact" className="container-fluid mt-5">
             <h2>Contact</h2>
             <form>
               <div className="form-group">
@@ -52,13 +52,24 @@ function App() {
         );
       case 'resume':
         return (
-          <section id="resume" className="container mt-5">
+          <section id="resume" className="container-fluid mt-5">
             <h2>Resume</h2>
             <a href="path/to/resume.pdf" download className="btn btn-secondary mb-3">Download Resume</a>
+            <h3>Proficiencies</h3>
             <ul className="list-group">
-              <li className="list-group-item">Proficiency 1</li>
-              <li className="list-group-item">Proficiency 2</li>
-              <li className="list-group-item">Proficiency 3</li>
+              <li className="list-group-item">HTML</li>
+              <li className="list-group-item">CSS</li>
+              <li className="list-group-item">JavaScript</li>
+              <li className="list-group-item">TypeScript</li>
+              <li className="list-group-item">NodeJS</li>
+              <li className="list-group-item">SQL</li>
+              <li className="list-group-item">ChatGPT</li>
+              <li className="list-group-item">Github Copilot</li>
+              <li className="list-group-item">Amazon Q</li>
+              <li className="list-group-item">Jira</li>
+              <li className="list-group-item">Confluence</li>
+              <li className="list-group-item">Qase</li>
+              <li className="list-group-item">LucidChart</li>
             </ul>
           </section>
         );
@@ -70,7 +81,7 @@ function App() {
   return (
     <>
       <header className="bg-dark text-white p-3">
-        <div className="container">
+        <div className="container-fluid">
           <h1>Developer's Name</h1>
           <nav>
             <ul className="nav">
@@ -86,9 +97,9 @@ function App() {
         {renderSection()}
       </main>
       <footer className="bg-dark text-white p-3 mt-5">
-        <div className="container">
-          <a href="https://github.com/developer" target="_blank" className="text-white mr-3">GitHub</a>
-          <a href="https://linkedin.com/in/developer" target="_blank" className="text-white mr-3">LinkedIn</a>
+        <div className="container-fluid">
+          <a href="https://github.com/NickDavis07" target="_blank" className="text-white mr-3">GitHub</a>
+          <a href="https://www.linkedin.com/in/nick-davis-491480323/" target="_blank" className="text-white mr-3">LinkedIn</a>
           <a href="https://stackoverflow.com/users/developer" target="_blank" className="text-white">Stack Overflow</a>
         </div>
       </footer>
