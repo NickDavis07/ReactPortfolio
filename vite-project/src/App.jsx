@@ -1,9 +1,26 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+  // State to keep track of the current section being displayed
   const [currentSection, setCurrentSection] = useState('about-me');
 
+  // Set the document title and favicon when the component mounts
+  useEffect(() => {
+    document.title = "NDavis Portfolio";
+    const link = document.createElement('link');
+    link.rel = 'icon';
+    link.href = '/src/assets/img/professional-portfolio.png'; 
+    document.head.appendChild(link);
+  }, []);
+
+  // Handle form submission and show an alert
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert('Your message has been sent!');
+  };
+
+  // Render the appropriate section based on the currentSection state
   const renderSection = () => {
     switch (currentSection) {
       case 'about-me':
@@ -26,14 +43,70 @@ function App() {
         return (
           <section id="portfolio" className="container-fluid mt-5">
             <h2>Portfolio</h2>
-            {/* Portfolio items will be added here */}
+            <div className="row">
+              {/* Portfolio project cards */}
+              <div className="col-md-4">
+                <div className="card mb-4">
+                  <img src="path/to/project1.jpg" className="card-img-top" alt="Project 1" />
+                  <div className="card-body">
+                    <h5 className="card-title">Project 1</h5>
+                    <p className="card-text">Short description of Project 1.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="card mb-4">
+                  <img src="path/to/project2.jpg" className="card-img-top" alt="Project 2" />
+                  <div className="card-body">
+                    <h5 className="card-title">Project 2</h5>
+                    <p className="card-text">Short description of Project 2.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="card mb-4">
+                  <img src="path/to/project3.jpg" className="card-img-top" alt="Project 3" />
+                  <div className="card-body">
+                    <h5 className="card-title">Project 3</h5>
+                    <p className="card-text">Short description of Project 3.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="card mb-4">
+                  <img src="path/to/project4.jpg" className="card-img-top" alt="Project 4" />
+                  <div className="card-body">
+                    <h5 className="card-title">Project 4</h5>
+                    <p className="card-text">Short description of Project 4.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="card mb-4">
+                  <img src="path/to/project5.jpg" className="card-img-top" alt="Project 5" />
+                  <div className="card-body">
+                    <h5 className="card-title">Project 5</h5>
+                    <p className="card-text">Short description of Project 5.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="card mb-4">
+                  <img src="path/to/project6.jpg" className="card-img-top" alt="Project 6" />
+                  <div className="card-body">
+                    <h5 className="card-title">Project 6</h5>
+                    <p className="card-text">Short description of Project 6.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
         );
       case 'contact':
         return (
           <section id="contact" className="container-fluid mt-5">
             <h2>Contact</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">Name:</label>
                 <input type="text" id="name" name="name" className="form-control" required />
@@ -101,6 +174,9 @@ function App() {
           <a href="https://github.com/NickDavis07" target="_blank" className="text-white mr-3">GitHub</a>
           <a href="https://www.linkedin.com/in/nick-davis-491480323/" target="_blank" className="text-white mr-3">LinkedIn</a>
           <a href="https://stackoverflow.com/users/developer" target="_blank" className="text-white">Stack Overflow</a>
+        </div>
+        <div className="text-white mt-3" style={{ fontSize: '0.75rem' }}>
+          <a href="https://www.flaticon.com/free-icons/portfolio" title="portfolio icons" className="text-white">Portfolio icons created by Flat Icons - Flaticon</a>
         </div>
       </footer>
     </>
